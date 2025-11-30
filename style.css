@@ -1,57 +1,221 @@
-/* Estilo retro tipo Windows XP (tema "Luna Azul") */
-:root{
---bg: #ECE9D8;
---panel: #FFFFFF;
---accent: #3A6EA5;
---accent-dark: #2B5490;
---btn-face: #CFE7FF;
---btn-border: #7A9CC8;
---text: #000000;
---muted: #666666;
---shadow: rgba(0,0,0,0.15);
+/* style.css - Tema Windows 95 */
+:root {
+  --win-gray: #c0c0c0;
+  --win-blue: #000080;
+  --win-text: #000000;
+  --win-white: #ffffff;
+  --win-dark: #808080;
+  --win-black: #000000;
 }
 
-*{box-sizing:border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
-html,body{height:100%;margin:0;background:linear-gradient(#d7dbe7, #cfd6e8);display:flex;align-items:center;justify-content:center}
-
-
-.window{
-width:960px;
-background:var(--bg);
-border:2px solid #7F9DB9;
-box-shadow: 6px 6px 0 var(--shadow);
+* {
+  box-sizing: border-box;
 }
-.titlebar{
-display:flex;justify-content:space-between;align-items:center;padding:6px 8px;background:linear-gradient(#3A6EA5,#2B5490);color:white;border-bottom:2px solid #233E63
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* El clásico fondo verde azulado de escritorio por defecto en Win95 */
+  background-color: #008080; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
+  font-size: 13px; /* Tamaño clásico */
 }
-.title{font-weight:700}
-.title-buttons button{margin-left:6px;border:none;background:transparent;color:white;font-weight:700;cursor:pointer}
 
+/* La ventana principal */
+.window {
+  width: 900px;
+  background-color: var(--win-gray);
+  /* El borde clásico de ventana 3D */
+  border-top: 2px solid var(--win-white);
+  border-left: 2px solid var(--win-white);
+  border-right: 2px solid var(--win-black);
+  border-bottom: 2px solid var(--win-black);
+  padding: 3px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.3); /* Sombra externa sutil */
+}
 
-.content{display:flex;padding:14px;gap:12px}
-.left-panel{width:280px;background:var(--panel);padding:10px;border:2px solid #B8CFEA}
-.right-panel{flex:1;background:var(--panel);padding:10px;border:2px solid #B8CFEA}
+/* Barra de título */
+.titlebar {
+  background-color: var(--win-blue);
+  color: var(--win-white);
+  padding: 2px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
 
+.title-buttons {
+  display: flex;
+  gap: 2px;
+}
 
-label{display:block;margin:10px 0;font-size:14px;color:var(--text)}
-input[type=number]{width:100%;padding:6px;border:2px inset #dfe9f7;border-radius:2px;font-size:14px}
+/* Botones de ventana (X, min, max) */
+.title-buttons button {
+  width: 16px;
+  height: 14px;
+  background: var(--win-gray);
+  border-top: 1px solid var(--win-white);
+  border-left: 1px solid var(--win-white);
+  border-right: 1px solid var(--win-black);
+  border-bottom: 1px solid var(--win-black);
+  font-size: 9px;
+  line-height: 10px;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+.title-buttons button:active {
+  border-top: 1px solid var(--win-black);
+  border-left: 1px solid var(--win-black);
+  border-right: 1px solid var(--win-white);
+  border-bottom: 1px solid var(--win-white);
+}
 
-.controls{display:flex;gap:8px;margin-top:8px}
-.btn{padding:8px 10px;border:2px solid var(--btn-border);background:var(--btn-face);cursor:pointer;border-radius:3px}
-.btn.primary{background:linear-gradient(var(--accent),var(--accent-dark));color:white;border-color:var(--accent-dark)}
+/* Contenido interno */
+.content {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
 
+.left-panel, .right-panel {
+  /* En Win95 no solían haber paneles blancos flotando, sino areas agrupadas */
+  padding: 5px;
+}
 
-.results{margin-top:14px}
-.summary{background:#f2f7ff;border:1px solid #cfe0ff;padding:8px;border-radius:3px}
-.integral{margin-top:8px;font-family:monospace;color:var(--muted)}
-.liters{margin-top:6px;font-weight:700}
-.notes{margin-top:12px;font-size:13px;color:var(--muted)}
-.statusbar{padding:6px 10px;background:#f4f4f4;border-top:2px solid #cfcfcf;color:#333}
+.left-panel {
+  width: 260px;
+}
 
+.right-panel {
+  flex: 1;
+}
 
-canvas{background:linear-gradient(#fff,#f6fbff);display:block;border:1px solid #c0d4ee}
+/* Inputs y Labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
+input[type=number] {
+  width: 100%;
+  margin-bottom: 15px;
+  background: var(--win-white);
+  color: var(--win-text);
+  /* Efecto "hundido" (inset) */
+  border-top: 2px solid var(--win-dark);
+  border-left: 2px solid var(--win-dark);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+  padding: 3px;
+  font-family: inherit;
+}
 
-/* pequeños efectos */
-.btn:active{transform:translateY(1px)}
+/* Botones Principales */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--win-white); /* Separador visual */
+  border-bottom: 1px solid var(--win-dark);
+  padding: 10px 0;
+}
+
+.btn {
+  background: var(--win-gray);
+  color: var(--win-text);
+  /* Efecto "levantado" (outset) */
+  border-top: 2px solid var(--win-white);
+  border-left: 2px solid var(--win-white);
+  border-right: 2px solid var(--win-black);
+  border-bottom: 2px solid var(--win-black);
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Efecto al presionar botón */
+.btn:active {
+  border-top: 2px solid var(--win-black);
+  border-left: 2px solid var(--win-black);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+  transform: translate(1px, 1px); /* Desplazamiento físico */
+}
+
+/* El botón primario en Win95 solía tener un borde negro extra alrededor */
+.btn.primary {
+  font-weight: bold;
+  border: 1px solid black; /* Borde de foco simulado */
+  outline: 1px solid var(--win-gray); /* espacio */
+  box-shadow: inset 1px 1px 0 var(--win-white), inset -1px -1px 0 var(--win-dark);
+}
+
+/* Resultados */
+.results {
+  border: 1px solid transparent;
+}
+
+.summary {
+  background: var(--win-gray);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.details {
+  background: var(--win-white);
+  /* Fieldset look (hundido) */
+  border-top: 2px solid var(--win-dark);
+  border-left: 2px solid var(--win-dark);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+  padding: 10px;
+  height: 100px; /* Altura fija para simular cuadro de texto */
+  overflow-y: auto;
+}
+
+.integral {
+  font-family: 'Courier New', monospace;
+  margin-bottom: 5px;
+}
+
+.liters {
+  font-weight: bold;
+  color: #000080;
+}
+
+.notes {
+  margin-top: 15px;
+  padding: 5px;
+  border: 1px solid var(--win-dark);
+  font-size: 11px;
+}
+
+/* Canvas con borde hundido */
+canvas {
+  background: #fff;
+  border-top: 2px solid var(--win-dark);
+  border-left: 2px solid var(--win-dark);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+  display: block;
+}
+
+/* Barra de estado inferior */
+.statusbar {
+  margin-top: 2px;
+  border-top: 1px solid var(--win-dark);
+  border-bottom: 1px solid var(--win-white);
+  padding: 4px 6px;
+  font-size: 11px;
+  color: var(--win-text);
+  box-shadow: inset 1px 1px 0 var(--win-dark); /* Efecto hundido sutil */
+}

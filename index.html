@@ -1,45 +1,62 @@
 <!doctype html>
-<label>Horas (0–24):
-<input id="hours" type="number" min="0" max="24" value="0">
-</label>
-<label>Minutos (0–59):
-<input id="minutes" type="number" min="0" max="59" value="30">
-</label>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Consumo 95</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="window">
+  <div class="titlebar">
+    <div class="title">Consumo de Gasolina - v1.0</div>
+    <div class="title-buttons">
+      <button aria-label="Minimizar">_</button>
+      <button aria-label="Maximizar">□</button>
+      <button aria-label="Cerrar" style="font-weight:bold">X</button>
+    </div>
+  </div>
 
-<div class="controls">
-<button id="calcBtn" class="btn primary">Calcular consumo</button>
-<button id="resetBtn" class="btn">Restablecer</button>
+  <div class="content">
+    <div class="left-panel">
+      <fieldset style="border: 2px groove white; padding: 10px; margin: 0;">
+        <legend style="margin-left: 5px; padding: 0 5px;">Entrada de Datos</legend>
+        
+        <label for="hours">Horas (0–24):</label>
+        <input id="hours" type="number" min="0" max="24" value="0">
+        
+        <label for="minutes">Minutos (0–59):</label>
+        <input id="minutes" type="number" min="0" max="59" value="30">
+
+        <div class="controls">
+          <button id="calcBtn" class="btn primary">Calcular</button>
+          <button id="resetBtn" class="btn">Limpiar</button>
+        </div>
+      </fieldset>
+
+      <div class="results">
+        <p>Salida del Sistema:</p>
+        <div class="details">
+          <div id="summary" class="summary" style="background:transparent; padding:0;">Esperando datos...</div>
+          <div id="integralText" class="integral"></div>
+          <div id="liters" class="liters"></div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <strong>Fórmula:</strong> C(t) = 1.2 + 0.3·sin(t)
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <canvas id="plot" width="600" height="400"></canvas>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    Listo. | Memoria libre: 640KB | Escala: 0-24h
+  </div>
 </div>
-
-
-<div class="results">
-<h3>Resultados</h3>
-<div id="summary" class="summary">Ingrese un tiempo y presione "Calcular consumo".</div>
-<div class="details">
-<div id="integralText" class="integral"></div>
-<div id="liters" class="liters"></div>
-</div>
-</div>
-
-
-<div class="notes">
-<strong>Modelo:</strong>
-<p>C(t) = 1.2 + 0.3 · sin(t) (t en horas)</p>
-<p>La integral se evalúa analíticamente: ∫₀ᵀ C(t) dt</p>
-</div>
-</div>
-
-
-<div class="right-panel">
-<canvas id="plot" width="800" height="420"></canvas>
-</div>
-</div>
-
-
-<div class="statusbar">Escala fija: 0–24 h (eje X). Rango Y fijo: 0.5–2.0 L/h. Tema: Luna Azul XP</div>
-</div>
-
 
 <script src="script.js"></script>
 </body>
