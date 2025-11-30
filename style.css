@@ -1,0 +1,57 @@
+/* Estilo retro tipo Windows XP (tema "Luna Azul") */
+:root{
+--bg: #ECE9D8;
+--panel: #FFFFFF;
+--accent: #3A6EA5;
+--accent-dark: #2B5490;
+--btn-face: #CFE7FF;
+--btn-border: #7A9CC8;
+--text: #000000;
+--muted: #666666;
+--shadow: rgba(0,0,0,0.15);
+}
+
+*{box-sizing:border-box;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+html,body{height:100%;margin:0;background:linear-gradient(#d7dbe7, #cfd6e8);display:flex;align-items:center;justify-content:center}
+
+
+.window{
+width:960px;
+background:var(--bg);
+border:2px solid #7F9DB9;
+box-shadow: 6px 6px 0 var(--shadow);
+}
+.titlebar{
+display:flex;justify-content:space-between;align-items:center;padding:6px 8px;background:linear-gradient(#3A6EA5,#2B5490);color:white;border-bottom:2px solid #233E63
+}
+.title{font-weight:700}
+.title-buttons button{margin-left:6px;border:none;background:transparent;color:white;font-weight:700;cursor:pointer}
+
+
+.content{display:flex;padding:14px;gap:12px}
+.left-panel{width:280px;background:var(--panel);padding:10px;border:2px solid #B8CFEA}
+.right-panel{flex:1;background:var(--panel);padding:10px;border:2px solid #B8CFEA}
+
+
+label{display:block;margin:10px 0;font-size:14px;color:var(--text)}
+input[type=number]{width:100%;padding:6px;border:2px inset #dfe9f7;border-radius:2px;font-size:14px}
+
+
+.controls{display:flex;gap:8px;margin-top:8px}
+.btn{padding:8px 10px;border:2px solid var(--btn-border);background:var(--btn-face);cursor:pointer;border-radius:3px}
+.btn.primary{background:linear-gradient(var(--accent),var(--accent-dark));color:white;border-color:var(--accent-dark)}
+
+
+.results{margin-top:14px}
+.summary{background:#f2f7ff;border:1px solid #cfe0ff;padding:8px;border-radius:3px}
+.integral{margin-top:8px;font-family:monospace;color:var(--muted)}
+.liters{margin-top:6px;font-weight:700}
+.notes{margin-top:12px;font-size:13px;color:var(--muted)}
+.statusbar{padding:6px 10px;background:#f4f4f4;border-top:2px solid #cfcfcf;color:#333}
+
+
+canvas{background:linear-gradient(#fff,#f6fbff);display:block;border:1px solid #c0d4ee}
+
+
+/* pequeños efectos */
+.btn:active{transform:translateY(1px)}

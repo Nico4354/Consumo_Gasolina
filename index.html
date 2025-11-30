@@ -1,0 +1,46 @@
+<!doctype html>
+<label>Horas (0–24):
+<input id="hours" type="number" min="0" max="24" value="0">
+</label>
+<label>Minutos (0–59):
+<input id="minutes" type="number" min="0" max="59" value="30">
+</label>
+
+
+<div class="controls">
+<button id="calcBtn" class="btn primary">Calcular consumo</button>
+<button id="resetBtn" class="btn">Restablecer</button>
+</div>
+
+
+<div class="results">
+<h3>Resultados</h3>
+<div id="summary" class="summary">Ingrese un tiempo y presione "Calcular consumo".</div>
+<div class="details">
+<div id="integralText" class="integral"></div>
+<div id="liters" class="liters"></div>
+</div>
+</div>
+
+
+<div class="notes">
+<strong>Modelo:</strong>
+<p>C(t) = 1.2 + 0.3 · sin(t) (t en horas)</p>
+<p>La integral se evalúa analíticamente: ∫₀ᵀ C(t) dt</p>
+</div>
+</div>
+
+
+<div class="right-panel">
+<canvas id="plot" width="800" height="420"></canvas>
+</div>
+</div>
+
+
+<div class="statusbar">Escala fija: 0–24 h (eje X). Rango Y fijo: 0.5–2.0 L/h. Tema: Luna Azul XP</div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
