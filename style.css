@@ -1,4 +1,3 @@
-/* style.css - Tema Windows 95 */
 :root {
   --win-gray: #c0c0c0;
   --win-blue: #000080;
@@ -15,29 +14,25 @@
 body {
   margin: 0;
   height: 100vh;
-  /* El clásico fondo verde azulado de escritorio por defecto en Win95 */
   background-color: #008080; 
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'MS Sans Serif', 'Segoe UI', sans-serif;
-  font-size: 13px; /* Tamaño clásico */
+  font-size: 13px; 
 }
 
-/* La ventana principal */
 .window {
   width: 900px;
   background-color: var(--win-gray);
-  /* El borde clásico de ventana 3D */
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-black);
   border-bottom: 2px solid var(--win-black);
   padding: 3px;
-  box-shadow: 2px 2px 0 rgba(0,0,0,0.3); /* Sombra externa sutil */
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.3); 
 }
 
-/* Barra de título */
 .titlebar {
   background-color: var(--win-blue);
   color: var(--win-white);
@@ -54,7 +49,6 @@ body {
   gap: 2px;
 }
 
-/* Botones de ventana (X, min, max) */
 .title-buttons button {
   width: 16px;
   height: 14px;
@@ -77,7 +71,6 @@ body {
   border-bottom: 1px solid var(--win-white);
 }
 
-/* Contenido interno */
 .content {
   display: flex;
   padding: 10px;
@@ -85,7 +78,6 @@ body {
 }
 
 .left-panel, .right-panel {
-  /* En Win95 no solían haber paneles blancos flotando, sino areas agrupadas */
   padding: 5px;
 }
 
@@ -97,7 +89,6 @@ body {
   flex: 1;
 }
 
-/* Inputs y Labels */
 label {
   display: block;
   margin-bottom: 5px;
@@ -108,7 +99,6 @@ input[type=number] {
   margin-bottom: 15px;
   background: var(--win-white);
   color: var(--win-text);
-  /* Efecto "hundido" (inset) */
   border-top: 2px solid var(--win-dark);
   border-left: 2px solid var(--win-dark);
   border-right: 2px solid var(--win-white);
@@ -117,12 +107,11 @@ input[type=number] {
   font-family: inherit;
 }
 
-/* Botones Principales */
 .controls {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  border-top: 1px solid var(--win-white); /* Separador visual */
+  border-top: 1px solid var(--win-white); 
   border-bottom: 1px solid var(--win-dark);
   padding: 10px 0;
 }
@@ -130,7 +119,6 @@ input[type=number] {
 .btn {
   background: var(--win-gray);
   color: var(--win-text);
-  /* Efecto "levantado" (outset) */
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-black);
@@ -142,24 +130,21 @@ input[type=number] {
   min-width: 80px;
 }
 
-/* Efecto al presionar botón */
 .btn:active {
   border-top: 2px solid var(--win-black);
   border-left: 2px solid var(--win-black);
   border-right: 2px solid var(--win-white);
   border-bottom: 2px solid var(--win-white);
-  transform: translate(1px, 1px); /* Desplazamiento físico */
+  transform: translate(1px, 1px); 
 }
 
-/* El botón primario en Win95 solía tener un borde negro extra alrededor */
 .btn.primary {
   font-weight: bold;
-  border: 1px solid black; /* Borde de foco simulado */
-  outline: 1px solid var(--win-gray); /* espacio */
+  border: 1px solid black; 
+  outline: 1px solid var(--win-gray); 
   box-shadow: inset 1px 1px 0 var(--win-white), inset -1px -1px 0 var(--win-dark);
 }
 
-/* Resultados */
 .results {
   border: 1px solid transparent;
 }
@@ -172,13 +157,12 @@ input[type=number] {
 
 .details {
   background: var(--win-white);
-  /* Fieldset look (hundido) */
   border-top: 2px solid var(--win-dark);
   border-left: 2px solid var(--win-dark);
   border-right: 2px solid var(--win-white);
   border-bottom: 2px solid var(--win-white);
   padding: 10px;
-  height: 100px; /* Altura fija para simular cuadro de texto */
+  height: 100px; 
   overflow-y: auto;
 }
 
@@ -199,7 +183,6 @@ input[type=number] {
   font-size: 11px;
 }
 
-/* Canvas con borde hundido */
 canvas {
   background: #fff;
   border-top: 2px solid var(--win-dark);
@@ -209,7 +192,6 @@ canvas {
   display: block;
 }
 
-/* Barra de estado inferior */
 .statusbar {
   margin-top: 2px;
   border-top: 1px solid var(--win-dark);
@@ -217,5 +199,5 @@ canvas {
   padding: 4px 6px;
   font-size: 11px;
   color: var(--win-text);
-  box-shadow: inset 1px 1px 0 var(--win-dark); /* Efecto hundido sutil */
+  box-shadow: inset 1px 1px 0 var(--win-dark); 
 }
